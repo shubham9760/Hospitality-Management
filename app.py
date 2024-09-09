@@ -2,13 +2,14 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
+import pickle
 
 # Load data
-df_dim_date = pd.read_csv(r"F:\Self Learning\Code_basics_projects\C1 Input files 1\Input Files\dim_date.csv")
-df_dim_hotels = pd.read_csv(r"F:\Self Learning\Code_basics_projects\C1 Input files 1\Input Files\dim_hotels.csv")
-df_dim_rooms = pd.read_csv(r"F:\Self Learning\Code_basics_projects\C1 Input files 1\Input Files\dim_rooms.csv")
-df_fact_aggregated_bookings = pd.read_csv(r"F:\Self Learning\Code_basics_projects\C1 Input files 1\Input Files\fact_aggregated_bookings.csv")
-df_fact_bookings = pd.read_csv(r"F:\Self Learning\Code_basics_projects\C1 Input files 1\Input Files\fact_bookings.csv")
+df_dim_date = pd.read_pickle(r"df_dim_date.pkl")
+df_dim_hotels = pd.read_pickle(r"df_dim_hotels.pkl")
+df_dim_rooms = pd.read_pickle(r"df_dim_rooms.pkl")
+df_fact_aggregated_bookings = pd.read_pickle(r"df_fact_aggregated_bookings.pkl")
+df_fact_bookings = pd.read_pickle(r"df_fact_bookings.pkl")
 
 # Data preprocessing
 df_dim_date["date"] = pd.to_datetime(df_dim_date["date"])
